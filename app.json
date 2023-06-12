@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "idle-active",
+    "slug": "idle-active",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.mltcnt.idleactive",
+      "permissions": [
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_ACTIVE_CALORIES_BURNED"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "29d6b1ab-be04-4461-aa3c-96b274c7181f"
+      }
+    },
+    "plugins": [
+      "./androidManifestPlugin.js",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "minSdkVersion": 26
+          }
+        }
+      ]
+    ]
+  }
+}
