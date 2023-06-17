@@ -1,11 +1,20 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, ToastAndroid, View } from "react-native";
 import { readSampleData } from "./api/health-connect";
 import { useEffect } from "react";
 
 export default function App() {
   useEffect(() => {
-    readSampleData();
+    try {
+      readSampleData();
+    } catch (error: any) {
+      console.log("h", error);
+      ToastAndroid.show(error, ToastAndroid.SHORT);
+    }
+  }, []);
+
+  useEffect(() => {
+    ToastAndroid.show("yo", ToastAndroid.LONG);
   }, []);
 
   return (
